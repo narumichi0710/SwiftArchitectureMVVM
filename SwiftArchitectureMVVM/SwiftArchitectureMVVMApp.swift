@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SwiftUIArchitectureMVCApp: App {
+struct SwiftArchitectureMVVMApp: App {
     var body: some Scene {
         WindowGroup {
             SearchMainView()

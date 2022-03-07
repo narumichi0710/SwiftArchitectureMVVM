@@ -1,6 +1,6 @@
-# SwiftArchitectureMVC
+# SwiftArchitectureMVVM
 
-### Referred to MVC pattern in [iOSアプリ設計パターン入門](https://peaks.cc/books/iOS_architecture)
+### Referred to MVVM pattern in [iOSアプリ設計パターン入門](https://peaks.cc/books/iOS_architecture)
 
 
 ### github search API 
