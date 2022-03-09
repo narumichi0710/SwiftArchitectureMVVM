@@ -9,23 +9,31 @@ import SwiftUI
 
 struct RepositoryView: View {
     let repositoryUrlString: String
-    @ObservedObject var model = SearchModel()
+    @StateObject var viewModel: RepositoryViewModel
+    
+    init(
+        viewModel: RepositoryViewModel = RepositoryViewModel(),
+        repositoryUrlString: String
+    ){
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.repositoryUrlString = repositoryUrlString
+    }
     
     var body: some View {
-        if let error = model.error {
+        if let error = viewModel.error {
             Text(error.localizedDescription)
         } else {
-            if model.isLoading {
+            if viewModel.isLoading {
                 ProgressView()
                     .scaleEffect(x: 3, y: 3, anchor: .center)
                     .onAppear {
-                        RepositoryController(model: model, urlString: repositoryUrlString).loadStart()
+                        viewModel.loadStart(url: repositoryUrlString)
                     }
             } else {
-                if model.repositories.isEmpty {
+                if viewModel.repositories.isEmpty {
                     Text("No Repository")
                 } else {
-                    List(model.repositories) { repository in
+                    List(viewModel.repositories) { repository in
                         RepositoryCard(repository: repository)
                     }
                 }

@@ -8,9 +8,6 @@
 import Foundation
 
 class SearchModel: ObservableObject {
-
-    @Published var repositories = [Repository]()
-    @Published var isLoading = true    
     
     private var endPoint: URLComponents {
         var components = URLComponents()
