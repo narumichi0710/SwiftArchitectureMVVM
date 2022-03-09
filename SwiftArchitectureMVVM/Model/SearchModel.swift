@@ -8,14 +8,9 @@
 import Foundation
 
 class SearchModel: ObservableObject {
-    @Published var users = [User]()
-    @Published var isNotFound = false
 
     @Published var repositories = [Repository]()
-    @Published var isLoading = true
-
-    @Published var error: ModelError?
-    
+    @Published var isLoading = true    
     
     private var endPoint: URLComponents {
         var components = URLComponents()
