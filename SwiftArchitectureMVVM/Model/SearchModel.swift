@@ -32,7 +32,9 @@ class SearchModel: ObservableObject {
         return url
     }
     
-    public func fetchUser(query: String) {
+    public func fetchUser(
+        query: String
+    ) {
         users = [User]()
         error = nil
         

@@ -8,32 +8,46 @@
 import SwiftUI
 
 struct SearchMainView: View {
-    @State private var searchText: String = ""
-    @ObservedObject var model = SearchModel()
+    @StateObject var viewModel: UserSearchViewModel
+    
+    init(viewModel: UserSearchViewModel = UserSearchViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search User Name", text: $searchText)
-                    .onChange(of: searchText, perform: { newValue in
-                        UserController(model: model, query: searchText).loadStart()
-                    })
+                TextField(
+                    "Search User Name",
+                    text: self.$viewModel.searchText
+                )
+                    .onChange(
+                        of: viewModel.searchText,
+                        perform: { newValue in
+                            viewModel.loadStart()
+                        }
+                    )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.asciiCapable)
                     .padding()
+                
                 Spacer()
-                if let error = model.error {
+                
+                if let error = viewModel.error {
                     Text(error.localizedDescription)
                 } else {
-                        List(model.users) { user in
-                            NavigationLink(destination: RepositoryView(repositoryUrlString: user.reposUrl)) {
-                                UserCard(user: user)
-                            }
+                    List(viewModel.users) { user in
+                        NavigationLink(
+                            destination: RepositoryView(
+                                repositoryUrlString: user.reposUrl
+                            )
+                        ) {
+                            UserCard(user: user)
                         }
-                        .refreshable {
-                            UserController(model: model, query: searchText).loadStart()
-                        }
-                    
+                    }
+                    .refreshable {
+                        viewModel.loadStart()
+                    }
                 }
             }
             .navigationTitle("🔍Search Github User")

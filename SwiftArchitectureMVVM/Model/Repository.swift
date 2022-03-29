@@ -15,7 +15,7 @@ struct Repository: Codable, Identifiable {
     let language: String?
     let stargazersCount: Int
     let forksCount: Int
-
+    
     private enum CodingKeys: String, CodingKey {
         case name
         case htmlUrl = "html_url"
@@ -25,10 +25,12 @@ struct Repository: Codable, Identifiable {
         case forksCount = "forks_count"
     }
     
-    static let mock = Repository(name: "SwiftUIArchitectureMVC",
-                                 htmlUrl: "https://github.com/narumichi0710/SwiftUIArchitectureMVC",
-                                 description: "SwiftUIArchitectureMVC",
-                                 language: "Swift",
-                                 stargazersCount: 1000,
-                                 forksCount: 100)
+    static let mock = Repository(
+        name: "SwiftUIArchitectureMVVM",
+        htmlUrl: "https://github.com/narumichi0710/SwiftUIArchitectureMVC",
+        description: "SwiftUIArchitectureMVC",
+        language: "Swift",
+        stargazersCount: 1000,
+        forksCount: 100
+    )
 }
