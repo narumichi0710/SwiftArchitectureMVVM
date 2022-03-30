@@ -24,6 +24,7 @@
 		5257C20727D4A80E00701C47 /* RepositoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257C20627D4A80E00701C47 /* RepositoryCard.swift */; };
 		5257C20927D4A83C00701C47 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257C20827D4A83C00701C47 /* Repository.swift */; };
 		5257C20B27D4A8A500701C47 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257C20A27D4A8A500701C47 /* RepositoryViewModel.swift */; };
+		5257C32527F490B300701C47 /* ModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257C32427F490B300701C47 /* ModelInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		5257C20627D4A80E00701C47 /* RepositoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCard.swift; sourceTree = "<group>"; };
 		5257C20827D4A83C00701C47 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5257C20A27D4A8A500701C47 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		5257C32427F490B300701C47 /* ModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				5257C1F527D3517600701C47 /* Users.swift */,
 				5257C20227D49B6500701C47 /* ModelError.swift */,
 				5257C20827D4A83C00701C47 /* Repository.swift */,
+				5257C32427F490B300701C47 /* ModelInput.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				5257C1FF27D4987A00701C47 /* UserSearchViewModel.swift in Sources */,
 				5257C1F627D3517700701C47 /* Users.swift in Sources */,
 				5257C20B27D4A8A500701C47 /* RepositoryViewModel.swift in Sources */,
+				5257C32527F490B300701C47 /* ModelInput.swift in Sources */,
 				5257C20327D49B6500701C47 /* ModelError.swift in Sources */,
 				5257C1F027D2603800701C47 /* SearchModel.swift in Sources */,
 			);

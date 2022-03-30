@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchModel: ObservableObject {
+struct SearchModel: ModelInput {
     
     private var endPoint: URLComponents {
         var components = URLComponents()
